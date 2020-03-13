@@ -1,0 +1,6 @@
+ext.resolveStaticVersion = { Configuration conf, String dep ->
+	def resolvedArtifacts = conf.resolvedConfiguration.resolvedArtifacts
+	def art = resolvedArtifacts.find { it.name == dep }
+	art.moduleVersion.id.version
+}
+
